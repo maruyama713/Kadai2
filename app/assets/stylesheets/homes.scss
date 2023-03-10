@@ -3,5 +3,17 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 * {
-  
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    margin: 30px;
+}
+
+main {
+    margin: 0 auto;
+    margin-left: 50px;
+     line-height: 70px;
 }
