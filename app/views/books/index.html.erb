@@ -1,11 +1,10 @@
-<h1>Books</h1>
+<div class="book-wrap">
 <% @books.each do |book| %>
+ <div class="list-comment">
+      <span class="list-body"><%= book.body %></span>
+      <span class="list-title"><%=link_to book.title %></span>
+ </div>
 
-<p>Title</p>
-<span><%= book.title %></span>
-
-<p>Body</p>
-<span><%= book.body %></span>
 <% end %>
 
 <h2>New Book</h2>
