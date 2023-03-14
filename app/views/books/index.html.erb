@@ -1,12 +1,16 @@
-<div class="book-wrap">
+<h1>Books</h1>
 <% @books.each do |book| %>
- <div class="list-comment">
-      <span class="list-body"><%= book.body %></span>
-      <span class="list-title"><%=link_to book.title %></span>
- </div>
+<p>Title</p>
+<span><%= book.title %></span>
+<%= link_to 'Show', "/books/#{book.id}" %>
+<%= link_to 'Edit', "/books/#{book.id}/edit" %>
+<%= link_to 'Destroy', book_path(book.id), method: :delete, "data-confirm" => "Are you sure?" %>
+
+<p>Body</p>
+<span><%= book.body %></span>
+
 
 <% end %>
-
 <h2>New Book</h2>
 
 <%= form_with model: @book, url: books_path, method: :post do |f| %>
