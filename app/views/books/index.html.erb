@@ -1,17 +1,29 @@
 <h1>Books</h1>
 <% @books.each do |book| %>
-<p>Title</p>
-<span><%= book.title %></span>
-<%= link_to 'Show', "/books/#{book.id}" %>
-<%= link_to 'Edit', "/books/#{book.id}/edit" %>
-<%= link_to 'Destroy', book_path(book.id), method: :delete, "data-confirm" => "Are you sure?" %>
-
-<p>Body</p>
-<span><%= book.body %></span>
-
+ <tr>
+    <th scope="col">Title</th>
+ </tr>
+ <td><%= book.title %></td>
+    <th scope="col">Body</th>
+ <td><%= book.body %></td>
+ </tr>
+ <tr>
+    <td><%= link_to 'Show', "/books/#{book.id}" %></td>
+    <td><%= link_to 'Edit', "/books/#{book.id}/edit" %></td>
+    <td><%= link_to 'Destroy', book_path(book.id), method: :delete, "data-confirm" => "Are you sure?" %></td>
+ </tr>
 
 <% end %>
+
 <h2>New Book</h2>
+<% if @book.errors.any? %>
+  <%= @book.errors.count %>
+  <ul>
+    <% @book.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
 
 <%= form_with model: @book, url: books_path, method: :post do |f| %>
 

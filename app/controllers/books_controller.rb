@@ -4,14 +4,24 @@ class BooksController < ApplicationController
   end
 
   def index
-    @books = Book.all.order(id: :desc)
+    @books = Book.all
     @book = Book.new
   end
 
   def create
     @book = Book.new(book_params)
+    if @book.valid?
     @book.save
+    return redirect_to  book_path(@book.id)
+    else
+    render :edit
+    end
+   if @book.save
     redirect_to book_path(@book.id)
+   else
+    @books = Book.all
+    render :index
+   end
   end
 
   def show
