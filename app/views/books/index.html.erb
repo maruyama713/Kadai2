@@ -31,12 +31,13 @@
 <% end %>
 
 <%= form_with model: @book, url: books_path, method: :post do |f| %>
-
-<h6>Title</h6>
-<%= f.text_field :title %>
-
-<h6>Body</h6>
-<%= f.text_area :body %>
-
-<%= f.submit 'Create Book' %>
+<div class="new-book">
+  <p>Title</p>
+  <p class="new-book-title"><%= f.text_field :title %></p>
+  
+  <p>Body</p>
+  <p class="new-book-body"><%= f.text_area :body %></p>
+  
+  <p class="submit"><%= f.submit 'Create Book' %></p>
+</div>
 <% end %>
