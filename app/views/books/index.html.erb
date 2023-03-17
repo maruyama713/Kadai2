@@ -1,5 +1,8 @@
+<div class="flash">
 <%=   flash[:hoge]  %>
-<h2>Books</h2>
+</div>
+
+<h1>Books</h1>
 <table>
     <thead>
         <tr>
@@ -20,24 +23,28 @@
     </tbody>
 </table>
 
-<h3>New Book</h3>
+<h2>New Book</h2>
 <% if @book.errors.any? %>
-  <%= @book.errors.count %>
-  <ul>
-    <% @book.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-    <% end %>
-  </ul>
+  <div id="error_explanation">
+    <h2><%= @book.errors.count %> error prohibited this book from being saved:</h2>
+    <ul>
+      <% @book.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
 <% end %>
 
 <%= form_with model: @book, url: books_path, method: :post do |f| %>
 <div class="new-book">
-  <p>Title</p>
-  <p class="new-book-title"><%= f.text_field :title %></p>
-  
-  <p>Body</p>
-  <p class="new-book-body"><%= f.text_area :body %></p>
-  
-  <p class="submit"><%= f.submit 'Create Book' %></p>
+  <div class="new-book-title">
+    <p>Title</p>
+    <p class="new-book-title"><%= f.text_field :title %></p>
+  </div>
+  <div class="new-book-body">
+    <p>Body</p>
+    <p class="new-book-body"><%= f.text_area :body %></p>
+  </div>
+    <p class="submit"><%= f.submit 'Create Book' %></p>
 </div>
 <% end %>
