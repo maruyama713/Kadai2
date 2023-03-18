@@ -13,59 +13,48 @@ h1 {
   line-height: 18px;
 }
 
-h2 {
-  margin-top: 30px;
-  line-height: 18px;
-}
-
-h6 {
-  margin-top: 30px;
-  margin-left: 30px;
-  line-height: 18px;
-}
-
 table {
   margin-top: 20px;
-  margin-left: 33px;
+  margin-bottom: 10px;
 　font-size: 13px;
   line-height: 18px;
 }
 
 th {
-  margin: 33px;
   padding: 1px 1px 5px;
-  font-size: 13px;
-}
-
-tbody {
-  margin: 33px;
-  font-size: 13px;
-  line-height: 18px;
 }
 
 td {
-  margin: 33px;
   padding: 1px 5px 7px;
 }
 
 .new-book {
+  margin-top: 15px;
   font-size: 13px;
   line-height: 18px;
 }
 
 .new-book-title {
-
+  margin: 0px 0px  10px;
 }
 
 .new-book-body {
-
+  margin: 0px 0px  10px;
 }
 
 p {
-  margin: 33px;
   font-size: 13px;
   line-height: 18px;
 }
+
+.title {
+  margin: 33px;
+}
+
+.body {
+  margin: 33px;
+}
+
 
 .flash {
   margin-top: 30px;
